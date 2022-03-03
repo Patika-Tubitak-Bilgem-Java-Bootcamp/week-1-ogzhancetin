@@ -1,0 +1,35 @@
+--Q1
+select distinct replacement_cost
+from film;
+
+--Q2
+select count(distinct replacement_cost)
+from film;
+
+--Q3
+select title
+from film
+where title like 'T%' and rating = 'G';
+
+select title, rating
+from film
+where title like 'T%' and rating = 'G';
+
+--answer
+select count(title) 
+from film
+where title like 'T%' and rating = 'G';
+ 
+--Q4
+select count(country)
+from country
+where country like '_____';
+--or
+select count(country)
+from country
+where length(country) = 5 ;
+
+--Q5
+select count(country)
+from country 
+where country ilike '%r';
