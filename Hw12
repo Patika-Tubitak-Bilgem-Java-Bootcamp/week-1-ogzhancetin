@@ -1,0 +1,37 @@
+
+--Q1
+
+SELECT count(*)
+FROM film
+WHERE length >
+	(
+		select avg(length) from film 
+	);
+
+--Q2
+
+SELECT count(*)
+FROM film
+WHERE rental_rate =
+	(
+		select max(rental_rate) from film 
+	);
+	
+--Q3
+SELECT *
+FROM film
+WHERE rental_rate =
+	(
+		select min(rental_rate) from film 
+	)
+AND replacement_cost = 
+	(
+		select min(replacement_cost) from film
+	);	
+	
+--Q4
+	
+SELECT payment.customer_id, first_name, last_name, COUNT(payment.customer_id) AS payment_count FROM payment
+LEFT JOIN customer ON payment.customer_id = customer.customer_id
+GROUP BY payment.customer_id, customer.first_name, customer.last_name
+ORDER BY payment_count DESC;
