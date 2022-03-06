@@ -1,0 +1,11 @@
+--Q1
+select city.city, country.country from city
+left join country on city.country_id = country.country_id;
+
+--Q2
+select first_name, last_name, payment_id from payment
+right join customer on customer.customer_id = payment.customer_id;
+
+--Q3
+select first_name, last_name, rental_id from rental
+full join customer on customer.customer_id = rental.customer_id;
